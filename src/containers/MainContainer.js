@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import UserList from '../components/UserList.jsx'
+import './MainContainer.css'
 
 class MainContainer extends Component {
 
@@ -27,27 +28,32 @@ class MainContainer extends Component {
       this.setState({
         users: newState
       });
-      //console.log(this.state);
+
     });
   }
 
 
   componentDidMount() {
     this.getUserList()
-    //this.getAccountList()
-    //console.log(this.state);
+
   }
 
 
   render() {
 
     return (
+      <div>
+      <header>
+        <img src="https://www.weareninetwenty.com/userfiles/NineTwentyMain/WebContent/beezer_logo_FIN2-01.png" width="115" height="50" alt="beezer logo" />
+      </header>
       <div className="wrapper">
         <ul>
-          <h2>Users</h2>
+          <h2 id="user-title">Users</h2>
           <UserList users={this.state.users}/>
         </ul>
       </div>
+
+    </div>
     );
   }
 

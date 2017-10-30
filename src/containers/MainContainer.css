@@ -1,0 +1,20 @@
+.wrapper {
+  margin-top: 20px ;
+}
+
+header {
+  margin: auto;
+  padding-left: 20px;
+  height: 50px;
+  border-bottom: 2px solid rgb(184,196,45)
+}
+
+#header-title{
+  margin:auto;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+body{
+  font-family: Montserrat, sans-serif;
+}

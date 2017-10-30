@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import ReactStars from 'react-stars'
+import './UserItem.css'
 
 class UserItem extends Component {
 
@@ -17,7 +18,6 @@ class UserItem extends Component {
     const appsRef = firebase.database().ref(`accounts/${this.props.account}`);
     appsRef.on('value', (snapshot) => {
     this.setState({apps: snapshot.val().apps})
-
     })
   }
 
@@ -35,9 +35,9 @@ class UserItem extends Component {
 
   mapApps(){
     const apps = Object.keys(this.state.apps).map((app, index) => {
-      console.log("mapped app",this.state.apps[app]);
       return(
-        <li key={index}>{this.state.apps[app].title} <ReactStars id='rating'
+        <li id="rating-item" key={index}>{this.state.apps[app].title}
+          <p>Rating:<ReactStars id="rating"
           name={app}
           count={5}
           onChange={(rating) => {
@@ -46,6 +46,7 @@ class UserItem extends Component {
           value={this.state.apps[app].rating}
           size={24}
          />
+         </p>
         </li>
 
         )
